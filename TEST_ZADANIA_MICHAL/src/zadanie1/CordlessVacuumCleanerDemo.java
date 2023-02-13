@@ -28,7 +28,5 @@ public class CordlessVacuumCleanerDemo {
         }
         System.out.println();
 
-
-
     }
 }

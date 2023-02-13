@@ -25,6 +25,8 @@ public class CordlessVacuumCleaner extends VacuumCleaner implements Named, Clone
 
     @Override
     public CordlessVacuumCleaner clone() throws CloneNotSupportedException {
-        return (CordlessVacuumCleaner) super.clone();
+        CordlessVacuumCleaner klonik = (CordlessVacuumCleaner) super.clone();
+        klonik.dateOfProd = (Date) dateOfProd.clone();
+        return klonik;
     }
 }
