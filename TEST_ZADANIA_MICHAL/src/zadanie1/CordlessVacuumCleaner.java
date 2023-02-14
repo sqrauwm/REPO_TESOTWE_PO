@@ -1,8 +1,9 @@
 package zadanie1;
 
+import java.util.ArrayList;
 import java.util.Date;
 
-public class CordlessVacuumCleaner extends VacuumCleaner implements Named, Cloneable {
+public class CordlessVacuumCleaner extends VacuumCleaner implements Named, Cloneable, Comparable<CordlessVacuumCleaner>{
     private final int id;
     private Date dateOfProd = null;
 
@@ -28,5 +29,20 @@ public class CordlessVacuumCleaner extends VacuumCleaner implements Named, Clone
         CordlessVacuumCleaner klonik = (CordlessVacuumCleaner) super.clone();
         klonik.dateOfProd = (Date) dateOfProd.clone();
         return klonik;
+    }
+
+    @Override
+    public int compareTo(CordlessVacuumCleaner o) {
+        int wynik = super.compareTo(o);
+        if (wynik!= 0 )
+            return wynik;
+        return Integer.compare(this.getId(), o.getId());
+    }
+
+    public int sumuj(ArrayList<Integer> tab){
+        int suma = 0;
+        for(Integer ello: tab){
+            suma += ello;}
+        return suma;
     }
 }
